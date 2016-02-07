@@ -39,7 +39,7 @@ class GetTrainStops(Resource):
 		try:
 			#Parse the args
 			parser = reqparse.RequestParser()
-			parser.add_argument('id', type=str)
+			parser.add_argument('id', type=str, required=True)
 			args = parser.parse_args()
 
 			_trainId = args['id']
@@ -67,9 +67,9 @@ class AddNewStatus(Resource):
 		try:
 			#Parse the args
 			parser = reqparse.RequestParser()
-			parser.add_argument('stopId', type=str)
-			parser.add_argument('delay', type=str)
-			parser.add_argument('reason', type=str)
+			parser.add_argument('stopId', type=str, required=True)
+			parser.add_argument('delay', type=str, required=True)
+			parser.add_argument('reason', type=str, required=True)
 			args = parser.parse_args()
 
 			_stopId = args['stopId']
@@ -96,16 +96,16 @@ class GetIncidentsForTrainStop(Resource):
 		try:
 			#Parse the args
 			parser = reqparse.RequestParser()
-			parser.add_argument('trainStopId', type=str)
+			parser.add_argument('stopId', type=str, required=True)
 			parser.add_argument('limit', type=str)
 			args = parser.parse_args()
 
-			_trainStopId = args['trainStopId']
+			_stopId = args['stopId']
 			_limit = args['limit']
 
 			conn = mysql.connect()
 			cursor = conn.cursor()
-			cursor.callproc('getHistoryForTrainStopId', (_trainStopId, _limit))
+			cursor.callproc('getHistoryForTrainStopId', (_stopId, _limit))
 			data = cursor.fetchall()
 
 			incidentList = []
@@ -123,10 +123,41 @@ class GetIncidentsForTrainStop(Resource):
 		except Exception as e:
 			return {'error': str(e)}
 
+class GetIncidentReasonCount(Resource):
+	def get(self):
+		try:
+			#Parse the args
+			parser = reqparse.RequestParser()
+			parser.add_argument('stopId', type=str, required=True)
+			parser.add_argument('dummy', type=str, required=True)
+			args = parser.parse_args()
+
+			_stopId = args['stopId']
+			_dummy = args['dummy']
+
+			conn = mysql.connect()
+			cursor = conn.cursor()
+			cursor.callproc('getReasonCount', (_stopId, _dummy))
+			data = cursor.fetchall()
+
+			incidentCountList = []
+			for item in data:
+				i = {
+					'reason': item[0],
+					'count': item[1]
+				}
+				incidentCountList.append(i)
+
+			return {'StatusCode': '200', 'data': incidentCountList}
+
+		except Exception as e:
+			return {'error': str(e)}
+
 api.add_resource(GetAllTrains, '/getAllTrains')
 api.add_resource(GetTrainStops, '/getTrainStops')
 api.add_resource(AddNewStatus, '/addNewStatus')
 api.add_resource(GetIncidentsForTrainStop, '/getIncidentsForTrainStop')
+api.add_resource(GetIncidentReasonCount, '/getIncidentReasonCount')
 
 if __name__ == '__main__':
 	app.run(host='192.168.1.5', debug=True)
