@@ -160,7 +160,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-mf-NYJ">
                                 <rect key="frame" x="180" y="399" width="51" height="31"/>
                             </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-Ow-faq">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-Ow-faq">
                                 <rect key="frame" x="27" y="458" width="319" height="31"/>
                                 <connections>
                                     <action selector="timeWaitedSliderAction:" destination="Baj-o0-VlF" eventType="valueChanged" id="KBj-0n-QKg"/>

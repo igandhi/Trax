@@ -78,6 +78,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                 }
         }
         
+        resetData();
     }
     
     
@@ -208,8 +209,12 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             reasons = reasons+"SKIPPING"
         }
         
-        
         return reasons;
+    }
+    
+    func resetData()
+    {
+    
     }
 }
 
