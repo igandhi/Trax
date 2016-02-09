@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		071376C31C67BDBA005EF672 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071376B11C67BC87005EF672 /* Alamofire.framework */; };
 		071376C41C67BDBA005EF672 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 071376B11C67BC87005EF672 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		085841C71C697498009622C8 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085841C61C697498009622C8 /* Stop.swift */; };
 		4E3E83F51BFE43850046BB0E /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E83F41BFE43850046BB0E /* DetailVC.swift */; };
 		4E3E83F81BFE439A0046BB0E /* SwiftyExpandingTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E83F71BFE439A0046BB0E /* SwiftyExpandingTransition.swift */; };
 		4E3E83FB1BFE47380046BB0E /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E83FA1BFE47380046BB0E /* Brand.swift */; };
@@ -98,6 +99,7 @@
 
 /* Begin PBXFileReference section */
 		071376A61C67BC86005EF672 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		085841C61C697498009622C8 /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		4E3E83F41BFE43850046BB0E /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		4E3E83F71BFE439A0046BB0E /* SwiftyExpandingTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyExpandingTransition.swift; sourceTree = "<group>"; };
 		4E3E83FA1BFE47380046BB0E /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		4E3E83F91BFE471F0046BB0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				085841C61C697498009622C8 /* Stop.swift */,
 				4E3E83FA1BFE47380046BB0E /* Brand.swift */,
 			);
 			path = Model;
@@ -351,6 +354,7 @@
 			files = (
 				4EFC40E01BFE38A200CCCFEC /* FontAwesome.swift in Sources */,
 				4E576E3C1BFE2D1E00F3DC58 /* MasterVC.swift in Sources */,
+				085841C71C697498009622C8 /* Stop.swift in Sources */,
 				4E3E83FE1BFE4ECD0046BB0E /* SegueHandlerType.swift in Sources */,
 				4E576E3A1BFE2D1E00F3DC58 /* AppDelegate.swift in Sources */,
 				4E3E83F81BFE439A0046BB0E /* SwiftyExpandingTransition.swift in Sources */,
@@ -479,7 +483,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftyExpandingCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SwiftyExpandingCells;
+				PRODUCT_BUNDLE_IDENTIFIER = Trax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -492,7 +496,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftyExpandingCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SwiftyExpandingCells;
+				PRODUCT_BUNDLE_IDENTIFIER = Trax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
