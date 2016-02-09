@@ -38,7 +38,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var timeSlider: UISlider!
     
     let GET_STATIONS_URL: String = "http://192.168.1.5:5000/getTrainStops?id="
-    let GET_INCIDENT_URL : String = "http://192.168.1.5:5000/getIncidentReasonCount?stopId=0&dummy=2"
+    let GET_INCIDENT_URL : String = "http://192.168.1.5:5000/getIncidentReasonCount?"
     let SET_INCIDENT_URL : String = "http://192.168.1.5:5000/addNewStatus?"
     
     @IBOutlet weak var submitButton: UIButton!
@@ -92,7 +92,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     func getIncidentForStation(let stopId: String)
     {
         resetIncidentCounts()
-        let url : String = GET_INCIDENT_URL //+ "stopId="+stopId+"&limit=10"
+        let url : String = GET_INCIDENT_URL + "stopId="+stopId+"&dummy=2"
         Alamofire.request(.GET, url)
             .responseJSON { response in
                 if let JSON = response.result.value {
