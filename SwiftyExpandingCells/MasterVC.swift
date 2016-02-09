@@ -16,7 +16,10 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
     
     let GET_ALL_TRAINS: String = "http://192.168.1.5:5000/getAllTrains"
     
+    
+    
     @IBOutlet var mainTableView: UITableView!
+    
     enum SegueIdentifier: String {
         case DetailVC = "DetailVC"
     }
@@ -34,7 +37,9 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
                     if let items = JSON["data"] as? [[String: AnyObject]] {
                         for item in items {
                             if let name = item["trainName"] as? String {
-                                BrandManager.sharedInstance.brands.append(Brand(iconText: String.fontAwesomeIconWithName(FontAwesome.Train), name: name, numberOfIncidents: "0"))
+                                let idInt : Int = (item["trainId"] as? Int)!
+                                let id : String = String(idInt)
+                                BrandManager.sharedInstance.brands.append(Brand(iconText: String.fontAwesomeIconWithName(FontAwesome.Train), name: name, numberOfIncidents: "0", id:id ))
                             }
                         }
                     }
@@ -72,7 +77,7 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
         case .DetailVC:
             let vc = segue.destinationViewController as! DetailVC
             vc.brand = self.selectedBrand
-            
+
             self.navigationController?.delegate = self
         }
     }
