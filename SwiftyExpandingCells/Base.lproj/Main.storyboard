@@ -156,6 +156,9 @@
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-A8-vVg">
                                 <rect key="frame" x="180" y="343" width="51" height="31"/>
+                                <connections>
+                                    <action selector="localSwitchChange:" destination="Baj-o0-VlF" eventType="valueChanged" id="2mg-wi-tDv"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-mf-NYJ">
                                 <rect key="frame" x="180" y="399" width="51" height="31"/>
@@ -164,7 +167,6 @@
                                 <rect key="frame" x="27" y="458" width="319" height="31"/>
                                 <connections>
                                     <action selector="timeWaitedSliderAction:" destination="Baj-o0-VlF" eventType="valueChanged" id="KBj-0n-QKg"/>
-                                    <action selector="xzxc:" destination="Baj-o0-VlF" eventType="valueChanged" id="YMT-2t-Iyh"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-V5-So6">
@@ -229,7 +231,6 @@
                         <outlet property="cancellationSwitch" destination="nvl-IN-mv8" id="eo5-so-mfM"/>
                         <outlet property="delayStatusLabel" destination="eCG-h1-YY6" id="eqY-Fs-89h"/>
                         <outlet property="delaySwitch" destination="UKI-71-QkT" id="9oh-cr-3GV"/>
-                        <outlet property="delaySwitchChange" destination="UKI-71-QkT" id="goy-uR-ZUU"/>
                         <outlet property="iconLabel" destination="7v6-bZ-3Sf" id="gJC-2O-lxQ"/>
                         <outlet property="localStatusLabel" destination="JKd-LY-xnZ" id="xmn-6m-Oka"/>
                         <outlet property="localSwitch" destination="mJ6-A8-vVg" id="VGL-XL-sst"/>

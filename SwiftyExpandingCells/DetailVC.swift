@@ -48,7 +48,6 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         self.stationPickerView.dataSource = self
         StopManager.sharedInstance.stationListData = [""]
         
-        
         delaySwitch.on = false
         cancellationSwitch.on = false
         localSwitch.on = false
@@ -66,9 +65,9 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func submitIncident()
     {
-        var stopId : String = StopManager.sharedInstance.ids[selectedStopIndex!]
-        var delay : String = "30"
-        var reason: String = getReasons();
+        let stopId : String = StopManager.sharedInstance.ids[selectedStopIndex!]
+        let delay : String = "30"
+        let reason: String = getReasons();
         let url : String = SET_INCIDENT_URL + "stopId"+stopId+"&delay"+delay+"&reason"+reason;
         
         Alamofire.request(.GET, url)
@@ -152,14 +151,22 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         super.didReceiveMemoryWarning()
     }
     
-    @IBOutlet weak var delaySwitchChange: UISwitch!
-    func delayStateChanged(switchState: UISwitch) {
+//    @IBAction func delaySwitchChange(switchState: UISwitch) {
+//        if switchState.on {
+//            delayFlag = true;
+//        } else {
+//            delayFlag = false;
+//        }
+//    }
+    
+    @IBAction func localSwitchChange(switchState: UISwitch) {
         if switchState.on {
-            delayFlag = true;
+            localFlag = true;
         } else {
-            delayFlag = false;
+            localFlag = false;
         }
     }
+    
     
     @IBAction func timeWaitedSliderAction(sender: UISlider) {
         let selectedValue = Int(sender.value)
@@ -214,7 +221,10 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func resetData()
     {
-    
+        delaySwitch.on = false
+        cancellationSwitch.on = false
+        localSwitch.on = false
+        skippingSwitch.on = false
     }
 }
 
