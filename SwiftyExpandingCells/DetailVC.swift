@@ -38,7 +38,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var timeSlider: UISlider!
     
     let GET_STATIONS_URL: String = "http://192.168.1.5:5000/getTrainStops?id="
-    let GET_HISTORY_URL : String = "http://192.168.1.5:5000/getIncidentsForTrainStop?"
+    let GET_INCIDENT_URL : String = "http://192.168.1.5:5000/getIncidentReasonCount?stopId=0&dummy=2"
     let SET_INCIDENT_URL : String = "http://192.168.1.5:5000/addNewStatus?"
     
     @IBOutlet weak var submitButton: UIButton!
@@ -55,6 +55,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         skippingSwitch.on = false
         
         loadStationsForTrain()
+        resetIncidentCounts()
         getFirstIncident()
         self.setup()
     }
@@ -69,13 +70,13 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         if(validate())
         {
             let stopId : String = StopManager.sharedInstance.ids[selectedStopIndex!]
-            let delay : String = "30"
-            let reason: String = getReasons();
-            let url : String = SET_INCIDENT_URL + "stopId="+stopId+"&delay="+delay+"&reason="+"DELAY"
+            let delay : String = waitedTime
+            let reason: String = getReasons()
+            let url : String = SET_INCIDENT_URL + "stopId="+stopId+"&delay="+delay+"&reason="+reason
             Alamofire.request(.GET, url)
             .responseJSON { response in
                 if let JSON = response.result.value {
-                    
+                    print(JSON)
                 }
             }
         
@@ -90,14 +91,28 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func getIncidentForStation(let stopId: String)
     {
-        let url : String = GET_HISTORY_URL + "stopId="+stopId+"&limit=10"
+        resetIncidentCounts()
+        let url : String = GET_INCIDENT_URL //+ "stopId="+stopId+"&limit=10"
         Alamofire.request(.GET, url)
             .responseJSON { response in
                 if let JSON = response.result.value {
                     if let items = JSON["data"] as? [[String: AnyObject]] {
                         for item in items {
-                            if let name = item["stopName"] as? String {
-                                
+                            if let reason = item["reason"] as? String {
+                                let countInt : Int = (item["count"] as? Int)!
+                                let count : String = String(countInt)
+                                switch reason {
+                                case "DELAY":
+                                    self.delayStatusLabel.text = count
+                                case "CANCELLATION":
+                                    self.cancellationStatusLabel.text = count
+                                case "LOCAL":
+                                    self.localStatusLabel.text = count
+                                case "SKIPPING":
+                                    self.skippingStatusLabel.text = count
+                                default:
+                                    print("Invalid Disruption received")
+                                }
                                 
                                 
                             }
@@ -258,6 +273,14 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         {
             return true
         }
+    }
+    
+    func resetIncidentCounts()
+    {
+        self.delayStatusLabel.text = "0"
+        self.cancellationStatusLabel.text = "0"
+        self.localStatusLabel.text = "0"
+        self.skippingStatusLabel.text = "0"
     }
 }
 
