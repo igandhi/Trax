@@ -47,6 +47,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         self.stationPickerView.delegate = self
         self.stationPickerView.dataSource = self
         StopManager.sharedInstance.stationListData = [""]
+        selectedStopIndex = 1
         
         delaySwitch.on = false
         cancellationSwitch.on = false
@@ -65,22 +66,27 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func submitIncident()
     {
-        let stopId : String = StopManager.sharedInstance.ids[selectedStopIndex!]
-        let delay : String = "30"
-        let reason: String = getReasons();
-        let url : String = SET_INCIDENT_URL + "stopId"+stopId+"&delay"+delay+"&reason"+reason;
-        
-        Alamofire.request(.GET, url)
+        if(validate())
+        {
+            let stopId : String = StopManager.sharedInstance.ids[selectedStopIndex!]
+            let delay : String = "30"
+            let reason: String = getReasons();
+            let url : String = SET_INCIDENT_URL + "stopId="+stopId+"&delay="+delay+"&reason="+"DELAY"
+            Alamofire.request(.GET, url)
             .responseJSON { response in
                 if let JSON = response.result.value {
                     
                 }
-        }
+            }
         
-        resetData();
+            resetData();
+        }
     }
     
     
+    @IBAction func reportButtonClick(sender: UIButton) {
+        submitIncident()
+    }
     
     func getIncidentForStation(let stopId: String)
     {
@@ -151,23 +157,6 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         super.didReceiveMemoryWarning()
     }
     
-//    @IBAction func delaySwitchChange(switchState: UISwitch) {
-//        if switchState.on {
-//            delayFlag = true;
-//        } else {
-//            delayFlag = false;
-//        }
-//    }
-    
-    @IBAction func localSwitchChange(switchState: UISwitch) {
-        if switchState.on {
-            localFlag = true;
-        } else {
-            localFlag = false;
-        }
-    }
-    
-    
     @IBAction func timeWaitedSliderAction(sender: UISlider) {
         let selectedValue = Int(sender.value)
         self.timeWaitedText.text = String(stringInterpolationSegment: selectedValue)+" Minutes Delayed"
@@ -225,6 +214,50 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         cancellationSwitch.on = false
         localSwitch.on = false
         skippingSwitch.on = false
+    }
+    
+    
+    @IBAction func delaySwitchChange(switchState: UISwitch) {
+        if switchState.on {
+            delayFlag = true;
+        } else {
+            delayFlag = false;
+        }
+    }
+    
+    @IBAction func localSwitchChange(switchState: UISwitch) {
+        if switchState.on {
+            localFlag = true;
+        } else {
+            localFlag = false;
+        }
+    }
+    
+    @IBAction func cancellationSwitchChange(switchState: UISwitch) {
+        if switchState.on {
+            delayFlag = true;
+        } else {
+            delayFlag = false;
+        }
+    }
+    
+    @IBAction func skippingSwitchChange(switchState: UISwitch) {
+        if switchState.on {
+            delayFlag = true;
+        } else {
+            delayFlag = false;
+        }
+    }
+    
+    func validate()-> Bool{
+        if(delayFlag && localFlag && skippingFlag && cancellationFlag)
+        {
+            return false
+        }
+        else
+        {
+            return true
+        }
     }
 }
 

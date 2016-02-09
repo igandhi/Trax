@@ -153,6 +153,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKI-71-QkT">
                                 <rect key="frame" x="20" y="343" width="51" height="31"/>
+                                <connections>
+                                    <action selector="delaySwitchChange:" destination="Baj-o0-VlF" eventType="valueChanged" id="oZB-1H-vF2"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-A8-vVg">
                                 <rect key="frame" x="180" y="343" width="51" height="31"/>
@@ -162,6 +165,9 @@
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-mf-NYJ">
                                 <rect key="frame" x="180" y="399" width="51" height="31"/>
+                                <connections>
+                                    <action selector="skippingSwitchChange:" destination="Baj-o0-VlF" eventType="valueChanged" id="fDa-Lz-qje"/>
+                                </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-Ow-faq">
                                 <rect key="frame" x="27" y="458" width="319" height="31"/>
@@ -177,6 +183,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <color key="titleShadowColor" red="0.14537965374996803" green="0.14454867660691759" blue="0.15735065607734811" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reportButtonClick:" destination="Baj-o0-VlF" eventType="touchUpInside" id="VN9-dg-hab"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Report a service disruption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrT-8Z-bXE">
                                 <rect key="frame" x="67" y="303" width="242" height="21"/>
@@ -216,6 +225,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvl-IN-mv8">
                                 <rect key="frame" x="20" y="399" width="51" height="31"/>
+                                <connections>
+                                    <action selector="cancellationSwitchChange:" destination="Baj-o0-VlF" eventType="valueChanged" id="5Gy-KM-vOs"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
