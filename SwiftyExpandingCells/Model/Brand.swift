@@ -13,12 +13,14 @@ import Alamofire
 class Brand {
     var iconText: String
     var name: String
+    var id: String
     var numberOfIncidents: String
     
-    init(iconText: String, name: String, numberOfIncidents: String) {
+    init(iconText: String, name: String, numberOfIncidents: String, id :String) {
         self.iconText = iconText
         self.name = name
         self.numberOfIncidents = numberOfIncidents
+        self.id = id
     }
 }
 
