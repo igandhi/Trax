@@ -37,9 +37,9 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var timeWaitedText: UILabel!
     @IBOutlet weak var timeSlider: UISlider!
     
-    let GET_STATIONS_URL: String = "http://192.168.1.5:5000/getTrainStops?id="
-    let GET_INCIDENT_URL : String = "http://192.168.1.5:5000/getIncidentReasonCount?"
-    let SET_INCIDENT_URL : String = "http://192.168.1.5:5000/addNewStatus?"
+    let GET_STATIONS_URL: String  = "http://162.243.253.200:5000/getTrainStops?id="
+    let GET_INCIDENT_URL : String = "http://162.243.253.200:5000/getIncidentReasonCount?"
+    let SET_INCIDENT_URL : String = "http://162.243.253.200:5000/addNewStatus?"
     
     @IBOutlet weak var submitButton: UIButton!
     override func viewDidLoad() {

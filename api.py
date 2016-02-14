@@ -5,10 +5,11 @@ from flask.ext.mysql import MySQL
 mysql = MySQL()
 app = Flask(__name__)
 
-app.config['MYSQL_DATABASE_USER'] = 'sql5105929'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'cbvZ6F2AgD'
-app.config['MYSQL_DATABASE_DB'] = 'sql5105929'
-app.config['MYSQL_DATABASE_HOST'] = 'sql5.freemysqlhosting.net'
+# MySQL configurations
+app.config['MYSQL_DATABASE_USER'] = 'trax'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'trax456'
+app.config['MYSQL_DATABASE_DB'] = 'traxDB'
+app.config['MYSQL_DATABASE_HOST'] = '162.243.253.200'
 
 mysql.init_app(app)
 api = Api(app)
@@ -160,4 +161,4 @@ api.add_resource(GetIncidentsForTrainStop, '/getIncidentsForTrainStop')
 api.add_resource(GetIncidentReasonCount, '/getIncidentReasonCount')
 
 if __name__ == '__main__':
-	app.run(host='192.168.1.5', debug=True)
+	app.run(host='162.243.253.200', port=5000, debug=True)

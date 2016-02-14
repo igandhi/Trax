@@ -14,7 +14,7 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
     var selectedCellFrame = CGRectZero
     var selectedBrand: Brand?
     
-    let GET_ALL_TRAINS: String = "http://192.168.1.5:5000/getAllTrains"
+    let GET_ALL_TRAINS: String = "http://162.243.253.200:5000/getAllTrains"
     
     
     
