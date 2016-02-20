@@ -10,6 +10,7 @@
 		071376C31C67BDBA005EF672 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071376B11C67BC87005EF672 /* Alamofire.framework */; };
 		071376C41C67BDBA005EF672 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 071376B11C67BC87005EF672 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		085841C71C697498009622C8 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085841C61C697498009622C8 /* Stop.swift */; };
+		08EEAB8F1C76BB1E0099667D /* subway-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08EEAB8E1C76BB1E0099667D /* subway-logo.jpg */; };
 		4E3E83F51BFE43850046BB0E /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E83F41BFE43850046BB0E /* DetailVC.swift */; };
 		4E3E83F81BFE439A0046BB0E /* SwiftyExpandingTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E83F71BFE439A0046BB0E /* SwiftyExpandingTransition.swift */; };
 		4E3E83FB1BFE47380046BB0E /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E83FA1BFE47380046BB0E /* Brand.swift */; };
@@ -100,6 +101,7 @@
 /* Begin PBXFileReference section */
 		071376A61C67BC86005EF672 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		085841C61C697498009622C8 /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		08EEAB8E1C76BB1E0099667D /* subway-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "subway-logo.jpg"; sourceTree = "<group>"; };
 		4E3E83F41BFE43850046BB0E /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		4E3E83F71BFE439A0046BB0E /* SwiftyExpandingTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyExpandingTransition.swift; sourceTree = "<group>"; };
 		4E3E83FA1BFE47380046BB0E /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		4EFC40D91BFE38A200CCCFEC /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				08EEAB8E1C76BB1E0099667D /* subway-logo.jpg */,
 				4E3E83FC1BFE4ECD0046BB0E /* SegueHandlerType */,
 				4EFC40DA1BFE38A200CCCFEC /* FontAwesome */,
 			);
@@ -340,6 +343,7 @@
 			files = (
 				4E576E441BFE2D1E00F3DC58 /* LaunchScreen.storyboard in Resources */,
 				4E576E411BFE2D1E00F3DC58 /* Assets.xcassets in Resources */,
+				08EEAB8F1C76BB1E0099667D /* subway-logo.jpg in Resources */,
 				4EFC40DF1BFE38A200CCCFEC /* FontAwesome.otf in Resources */,
 				4E576E3F1BFE2D1E00F3DC58 /* Main.storyboard in Resources */,
 			);

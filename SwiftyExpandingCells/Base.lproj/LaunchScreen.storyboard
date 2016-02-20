@@ -16,12 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="subway-logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dtw-Cd-5o3">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dtw-Cd-5o3" secondAttribute="trailing" id="0xj-Ck-iqU"/>
+                            <constraint firstItem="dtw-Cd-5o3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Ctv-8g-B8W"/>
+                            <constraint firstItem="dtw-Cd-5o3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="hmq-K1-x2o"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dtw-Cd-5o3" secondAttribute="bottom" id="kxq-4V-dpq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="53" y="372"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="subway-logo.jpg" width="750" height="1334"/>
+    </resources>
 </document>

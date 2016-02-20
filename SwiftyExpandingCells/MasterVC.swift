@@ -9,6 +9,14 @@
 import UIKit
 import Alamofire
 
+extension UIView {
+    func makeCircular() {
+        let cntr:CGPoint = self.center
+        self.layer.cornerRadius = min(self.frame.size.height, self.frame.size.width) / 2.0
+        self.center = cntr
+    }
+}
+
 class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHandlerType {
     let transtition = SwiftyExpandingTransition()
     var selectedCellFrame = CGRectZero
@@ -24,6 +32,7 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
         case DetailVC = "DetailVC"
     }
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Making Json Call")
@@ -39,7 +48,8 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
                             if let name = item["trainName"] as? String {
                                 let idInt : Int = (item["trainId"] as? Int)!
                                 let id : String = String(idInt)
-                                BrandManager.sharedInstance.brands.append(Brand(iconText: String.fontAwesomeIconWithName(FontAwesome.Train), name: name, numberOfIncidents: "0", id:id ))
+                                let iconText : String = name[name.startIndex...name.startIndex.advancedBy(0)]
+                                BrandManager.sharedInstance.brands.append(Brand(iconText: iconText, name: name, numberOfIncidents: "0", id:id ))
                             }
                         }
                     }
@@ -53,11 +63,16 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let brand = BrandManager.sharedInstance.brands[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("brand") {
             cell.textLabel?.text = brand.iconText
-            cell.detailTextLabel?.text = brand.name + " " + brand.numberOfIncidents
+            cell.textLabel?.makeCircular();
+            cell.textLabel?.layer.masksToBounds = true
+            cell.textLabel?.layer.cornerRadius = 30.0
+            cell.detailTextLabel?.text = brand.name + " "
+                //+ brand.numberOfIncidents
             
             return cell
         }

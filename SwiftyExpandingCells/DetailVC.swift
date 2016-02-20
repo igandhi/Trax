@@ -43,7 +43,10 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var submitButton: UIButton!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        
         self.stationPickerView.delegate = self
         self.stationPickerView.dataSource = self
         StopManager.sharedInstance.stationListData = [""]
@@ -104,6 +107,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                                 switch reason {
                                 case "DELAY":
                                     self.delayStatusLabel.text = count
+                                    self.delayStatusLabel.textColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
                                 case "CANCELLATION":
                                     self.cancellationStatusLabel.text = count
                                 case "LOCAL":
