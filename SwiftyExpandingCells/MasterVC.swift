@@ -49,6 +49,8 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
                                 let idInt : Int = (item["trainId"] as? Int)!
                                 let id : String = String(idInt)
                                 let iconText : String = name[name.startIndex...name.startIndex.advancedBy(0)]
+                                
+                                let formattedName = name.componentsSeparatedByString("-")
                                 BrandManager.sharedInstance.brands.append(Brand(iconText: iconText, name: name, numberOfIncidents: "0", id:id ))
                             }
                         }
@@ -69,8 +71,7 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
         if let cell = tableView.dequeueReusableCellWithIdentifier("brand") {
             cell.textLabel?.text = brand.iconText
             cell.textLabel?.makeCircular();
-            cell.textLabel?.layer.masksToBounds = true
-            cell.textLabel?.layer.cornerRadius = 30.0
+            
             cell.detailTextLabel?.text = brand.name + " "
                 //+ brand.numberOfIncidents
             

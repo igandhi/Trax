@@ -37,6 +37,9 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var timeWaitedText: UILabel!
     @IBOutlet weak var timeSlider: UISlider!
     
+    let redColor : UIColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+    let blueColor : UIColor = UIColor(red: 52.0/255.0, green: 78.0/255.0, blue: 148.0/255.0, alpha: 1.0)
+
     let GET_STATIONS_URL: String  = "http://162.243.253.200:5000/getTrainStops?id="
     let GET_INCIDENT_URL : String = "http://162.243.253.200:5000/getIncidentReasonCount?"
     let SET_INCIDENT_URL : String = "http://162.243.253.200:5000/addNewStatus?"
@@ -107,13 +110,16 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                                 switch reason {
                                 case "DELAY":
                                     self.delayStatusLabel.text = count
-                                    self.delayStatusLabel.textColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+                                    self.delayStatusLabel.textColor = self.redColor
                                 case "CANCELLATION":
                                     self.cancellationStatusLabel.text = count
+                                    self.cancellationStatusLabel.textColor = self.redColor
                                 case "LOCAL":
                                     self.localStatusLabel.text = count
+                                    self.localStatusLabel.textColor = self.redColor
                                 case "SKIPPING":
                                     self.skippingStatusLabel.text = count
+                                    self.skippingStatusLabel.textColor = self.redColor
                                 default:
                                     print("Invalid Disruption received")
                                 }
@@ -292,6 +298,12 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         self.cancellationStatusLabel.text = "0"
         self.localStatusLabel.text = "0"
         self.skippingStatusLabel.text = "0"
+        
+        self.delayStatusLabel.textColor = self.blueColor
+        self.cancellationStatusLabel.textColor = self.blueColor
+        self.localStatusLabel.textColor = self.blueColor
+        self.skippingStatusLabel.textColor = self.blueColor
+        
     }
 }
 
