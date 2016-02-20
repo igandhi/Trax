@@ -70,7 +70,8 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("brand") {
             cell.textLabel?.text = brand.iconText
-            cell.textLabel?.makeCircular();
+            cell.textLabel?.layer.masksToBounds = true
+            cell.textLabel?.layer.cornerRadius = (cell.textLabel?.frame.size.height)!/2
             
             cell.detailTextLabel?.text = brand.name + " "
                 //+ brand.numberOfIncidents
