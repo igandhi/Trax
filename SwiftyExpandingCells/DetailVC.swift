@@ -163,8 +163,7 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         if let brand = self.brand {
             self.title = brand.name
-            
-            self.iconLabel.text = brand.iconText
+            //self.iconLabel.text = "train" //brand.iconText
         }
     }
     
@@ -209,17 +208,18 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         }
         if(localFlag)
         {
-            reasons = reasons+"LOCAL"
+            reasons = reasons+"-LOCAL"
         }
         if(cancellationFlag)
         {
-            reasons = reasons+"CANCELLATION"
+            reasons = reasons+"-CANCELLATION"
         }
         if(skippingFlag)
         {
-            reasons = reasons+"SKIPPING"
+            reasons = reasons+"-SKIPPING"
         }
         
+        print(reasons)
         return reasons;
     }
     
@@ -229,6 +229,10 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         cancellationSwitch.on = false
         localSwitch.on = false
         skippingSwitch.on = false
+        delayFlag = false
+        localFlag = false
+        cancellationFlag = false
+        skippingFlag = false
     }
     
     
@@ -250,22 +254,25 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func cancellationSwitchChange(switchState: UISwitch) {
         if switchState.on {
-            delayFlag = true;
+            cancellationFlag = true;
         } else {
-            delayFlag = false;
+            cancellationFlag = false;
         }
     }
     
     @IBAction func skippingSwitchChange(switchState: UISwitch) {
         if switchState.on {
-            delayFlag = true;
+            skippingFlag = true;
         } else {
-            delayFlag = false;
+            skippingFlag = false;
         }
     }
     
     func validate()-> Bool{
-        if(delayFlag && localFlag && skippingFlag && cancellationFlag)
+        //will allow empty
+        return true
+        
+        if(!(delayFlag && localFlag && skippingFlag && cancellationFlag))
         {
             return false
         }
