@@ -173,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				071376A61C67BC86005EF672 /* Alamofire.xcodeproj */,
-				4E576E381BFE2D1E00F3DC58 /* SwiftyExpandingCells */,
+				4E576E381BFE2D1E00F3DC58 /* Trax */,
 				4E576E371BFE2D1E00F3DC58 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4E576E381BFE2D1E00F3DC58 /* SwiftyExpandingCells */ = {
+		4E576E381BFE2D1E00F3DC58 /* Trax */ = {
 			isa = PBXGroup;
 			children = (
 				4E3E83F91BFE471F0046BB0E /* Model */,
@@ -200,6 +200,7 @@
 				4E576E421BFE2D1E00F3DC58 /* LaunchScreen.storyboard */,
 				4E576E451BFE2D1E00F3DC58 /* Info.plist */,
 			);
+			name = Trax;
 			path = SwiftyExpandingCells;
 			sourceTree = "<group>";
 		};
