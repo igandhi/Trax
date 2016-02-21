@@ -106,7 +106,7 @@
 		4E3E83F71BFE439A0046BB0E /* SwiftyExpandingTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyExpandingTransition.swift; sourceTree = "<group>"; };
 		4E3E83FA1BFE47380046BB0E /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		4E3E83FD1BFE4ECD0046BB0E /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
-		4E576E361BFE2D1E00F3DC58 /* SwiftyExpandingCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyExpandingCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E576E361BFE2D1E00F3DC58 /* Trax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E576E391BFE2D1E00F3DC58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E576E3B1BFE2D1E00F3DC58 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
 		4E576E3E1BFE2D1E00F3DC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		4E576E371BFE2D1E00F3DC58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E576E361BFE2D1E00F3DC58 /* SwiftyExpandingCells.app */,
+				4E576E361BFE2D1E00F3DC58 /* Trax.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,9 +226,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E576E351BFE2D1E00F3DC58 /* SwiftyExpandingCells */ = {
+		4E576E351BFE2D1E00F3DC58 /* Trax */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E576E481BFE2D1E00F3DC58 /* Build configuration list for PBXNativeTarget "SwiftyExpandingCells" */;
+			buildConfigurationList = 4E576E481BFE2D1E00F3DC58 /* Build configuration list for PBXNativeTarget "Trax" */;
 			buildPhases = (
 				4E576E321BFE2D1E00F3DC58 /* Sources */,
 				4E576E331BFE2D1E00F3DC58 /* Frameworks */,
@@ -240,9 +240,9 @@
 			dependencies = (
 				071376C61C67BDBA005EF672 /* PBXTargetDependency */,
 			);
-			name = SwiftyExpandingCells;
+			name = Trax;
 			productName = SwiftyExpandingCells;
-			productReference = 4E576E361BFE2D1E00F3DC58 /* SwiftyExpandingCells.app */;
+			productReference = 4E576E361BFE2D1E00F3DC58 /* Trax.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +260,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E576E311BFE2D1E00F3DC58 /* Build configuration list for PBXProject "SwiftyExpandingCells" */;
+			buildConfigurationList = 4E576E311BFE2D1E00F3DC58 /* Build configuration list for PBXProject "Trax" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -279,7 +279,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				4E576E351BFE2D1E00F3DC58 /* SwiftyExpandingCells */,
+				4E576E351BFE2D1E00F3DC58 /* Trax */,
 			);
 		};
 /* End PBXProject section */
@@ -486,9 +486,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftyExpandingCells/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Trax;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Trax;
 			};
 			name = Debug;
 		};
@@ -499,16 +500,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftyExpandingCells/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Trax;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Trax;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E576E311BFE2D1E00F3DC58 /* Build configuration list for PBXProject "SwiftyExpandingCells" */ = {
+		4E576E311BFE2D1E00F3DC58 /* Build configuration list for PBXProject "Trax" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E576E461BFE2D1E00F3DC58 /* Debug */,
@@ -517,7 +519,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E576E481BFE2D1E00F3DC58 /* Build configuration list for PBXNativeTarget "SwiftyExpandingCells" */ = {
+		4E576E481BFE2D1E00F3DC58 /* Build configuration list for PBXNativeTarget "Trax" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E576E491BFE2D1E00F3DC58 /* Debug */,

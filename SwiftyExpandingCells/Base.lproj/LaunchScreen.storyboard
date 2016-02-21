@@ -29,6 +29,7 @@
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="dtw-Cd-5o3" secondAttribute="bottom" id="kxq-4V-dpq"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

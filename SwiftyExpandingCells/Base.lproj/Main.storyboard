@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -224,11 +223,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Qeu-1O-86a" secondAttribute="trailing" constant="30" id="4Hu-7H-drM"/>
+                            <constraint firstItem="FrT-8Z-bXE" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" id="4vM-mP-i09"/>
                             <constraint firstItem="Ypj-Ow-faq" firstAttribute="top" secondItem="4n8-c7-qeM" secondAttribute="bottom" constant="5" id="7dY-JT-5Re"/>
                             <constraint firstItem="4n8-c7-qeM" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" id="9dY-AZ-hLm"/>
                             <constraint firstAttribute="trailing" secondItem="eCG-h1-YY6" secondAttribute="trailing" constant="30" id="AEb-cy-ILO"/>
                             <constraint firstItem="6L3-AZ-ZU8" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" constant="30" id="CQ3-yG-fSi"/>
-                            <constraint firstItem="FrT-8Z-bXE" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leadingMargin" id="Hfc-3I-Htc"/>
                             <constraint firstAttribute="trailing" secondItem="fwQ-vw-5Zg" secondAttribute="trailing" constant="30" id="L6I-4e-7kg"/>
                             <constraint firstItem="chR-KR-sXi" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" id="Lke-NQ-Kqv"/>
                             <constraint firstItem="1Ky-qu-yXK" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" constant="30" id="MXo-AQ-Gqc"/>
@@ -244,9 +243,9 @@
                             <constraint firstAttribute="trailing" secondItem="JKd-LY-xnZ" secondAttribute="trailing" constant="30" id="lZZ-sX-eCh"/>
                             <constraint firstItem="lyn-05-hkw" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" constant="30" id="lkF-Xa-06B"/>
                             <constraint firstItem="nzP-Mg-xzu" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" constant="30" id="pC1-Hf-MH8"/>
+                            <constraint firstAttribute="trailing" secondItem="FrT-8Z-bXE" secondAttribute="trailing" id="pnj-ms-RFn"/>
                             <constraint firstItem="chR-KR-sXi" firstAttribute="top" secondItem="3Qz-1c-hJi" secondAttribute="bottom" constant="30" id="slp-a5-5mP"/>
                             <constraint firstItem="Ypj-Ow-faq" firstAttribute="leading" secondItem="qMG-7J-gU8" secondAttribute="leading" id="t1Z-Yz-nFX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FrT-8Z-bXE" secondAttribute="trailing" id="tWA-tv-QUU"/>
                             <constraint firstAttribute="trailing" secondItem="4n8-c7-qeM" secondAttribute="trailing" id="tzB-4y-XKa"/>
                             <constraint firstAttribute="trailing" secondItem="chR-KR-sXi" secondAttribute="trailing" id="xWj-bq-rKn"/>
                         </constraints>

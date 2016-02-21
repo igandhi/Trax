@@ -73,14 +73,20 @@ class AddNewStatus(Resource):
 			parser.add_argument('reason', type=str, required=True)
 			args = parser.parse_args()
 
-			_stopId = args['stopId']
-			_delay = args['delay']
-			_reason = args['reason']
+			_stopId 	= args['stopId']
+			_delay 		= args['delay']
+			_reasons 	= args['reason']
+
+			if _reasons.startswith('-'):
+				_reasons = _reasons[1:]
+
+			_reasons = _reasons.split('-')
 
 			conn = mysql.connect()
-			cursor = conn.cursor()
-			cursor.callproc('addToHistory', (_stopId, _delay, _reason))
-			data = cursor.fetchall()
+			for _reason in _reasons:
+				cursor = conn.cursor()
+				cursor.callproc('addToHistory', (_stopId, _delay, _reason))
+				data = cursor.fetchall()
 
 
 			if len(data) is 0:

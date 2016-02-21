@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SwiftyExpandingCells.xcodeproj">
+      location = "self:/Users/karandesai/Documents/workspace/Trax/Trax.xcodeproj">
    </FileRef>
 </Workspace>
