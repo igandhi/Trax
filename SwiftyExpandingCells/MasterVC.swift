@@ -9,14 +9,6 @@
 import UIKit
 import Alamofire
 
-extension UIView {
-    func makeCircular() {
-        let cntr:CGPoint = self.center
-        self.layer.cornerRadius = min(self.frame.size.height, self.frame.size.width) / 2.0
-        self.center = cntr
-    }
-}
-
 class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHandlerType {
     let transtition = SwiftyExpandingTransition()
     var selectedCellFrame = CGRectZero
@@ -31,6 +23,7 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
     enum SegueIdentifier: String {
         case DetailVC = "DetailVC"
     }
+    
     
   
     override func viewDidLoad() {
@@ -69,13 +62,15 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
         let brand = BrandManager.sharedInstance.brands[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("brand") {
+            cell.detailTextLabel?.text = brand.name + " " //+ brand.numberOfIncidents
             cell.textLabel?.text = brand.iconText
-            cell.textLabel?.layer.masksToBounds = true
-            cell.textLabel?.layer.cornerRadius = (cell.textLabel?.frame.size.height)!/2
-            
-            cell.detailTextLabel?.text = brand.name + " "
-                //+ brand.numberOfIncidents
-            
+            let size:CGFloat = 35.0 // 35.0 chosen arbitrarily
+            cell.textLabel?.bounds = CGRectMake(0.0, 0.0, size, size)
+            cell.textLabel?.layer.cornerRadius = size / 2
+            cell.textLabel?.layer.backgroundColor = UIColor(red:0.0, green:0.58, blue:0.24, alpha:1.0).CGColor
+            //cell.textLabel?.layer.borderColor = UIColor.whiteColor().CGColor
+            //cell.textLabel?.layer.borderWidth = 3.0
+      
             return cell
         }
         
@@ -122,5 +117,6 @@ class MasterVC: UITableViewController, UINavigationControllerDelegate, SegueHand
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
 }
 

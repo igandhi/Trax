@@ -40,6 +40,8 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let redColor : UIColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
     let blueColor : UIColor = UIColor(red: 52.0/255.0, green: 78.0/255.0, blue: 148.0/255.0, alpha: 1.0)
 
+    
+    
     let GET_STATIONS_URL: String  = "http://162.243.253.200:5000/getTrainStops?id="
     let GET_INCIDENT_URL : String = "http://162.243.253.200:5000/getIncidentReasonCount?"
     let SET_INCIDENT_URL : String = "http://162.243.253.200:5000/addNewStatus?"
@@ -53,23 +55,19 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         self.stationPickerView.delegate = self
         self.stationPickerView.dataSource = self
         StopManager.sharedInstance.stationListData = [""]
-        selectedStopIndex = 1
+        selectedStopIndex = 0
         
         delaySwitch.on = false
         cancellationSwitch.on = false
         localSwitch.on = false
         skippingSwitch.on = false
         
-        loadStationsForTrain()
         resetIncidentCounts()
-        getFirstIncident()
+        loadStationsForTrain()
+
         self.setup()
     }
     
-    func getFirstIncident()
-    {
-        
-    }
     
     func submitIncident()
     {
@@ -86,7 +84,8 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                 }
             }
         
-            resetData();
+            resetData()
+            getIncidentForStation(stopId)
         }
     }
     
@@ -158,7 +157,9 @@ class DetailVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                                 StopManager.sharedInstance.stationListData.append(name);
                             }
                             self.stationPickerView.reloadAllComponents()
-                            
+                            self.stationPickerView.selectRow(0, inComponent: 0, animated: true)
+                            self.getIncidentForStation(StopManager.sharedInstance.ids[0])
+
                         }
                     }
                     
